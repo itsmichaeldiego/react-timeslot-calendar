@@ -62,7 +62,7 @@ export default class Calendar extends React.Component {
       initialDate,
     } = this.props;
 
-    const cal = new CalendarJS(currentDate.year(), currentDate.month() + 1);
+    const cal = new CalendarJS(currentDate.year(), currentDate.month() + 1, currentDate.day());
     const weeks = cal.generate();
 
     return (

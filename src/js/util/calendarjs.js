@@ -1,8 +1,10 @@
+// eslint-disable-file
+// src: https://github.com/sjlu/calendarjs/blob/master/index.js
 var moment = require('moment');
 
 var Calendar = (function() {
 
-  function Calendar(year, month) {
+  function Calendar(year, month, date) {
     this.moment = moment();
 
     if (year) {
@@ -18,6 +20,7 @@ var Calendar = (function() {
 
     // set to the beginning of the month;
     this.moment.date(1);
+    this.date = date;
   }
 
   Calendar.prototype.daysOfWeekStrings = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -56,7 +59,7 @@ var Calendar = (function() {
     var d = 1;
     while (d <= daysInMonth) {
       // finish and close off the week
-      if (m.day() === 0 && w.length) {
+      if (m.day() === this.date && w.length) {
         weeks.push(w);
         w = [];
       }
