@@ -14,7 +14,7 @@ export default class Calendar extends React.Component {
     this._updateRenderDays(this.props.renderDays);
 
     this.state = {
-      currentDate: moment(props.initialDate),
+      currentDate: moment(),
       selectedTimeslots: [],
     };
   }
