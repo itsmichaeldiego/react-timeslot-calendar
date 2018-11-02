@@ -155,8 +155,8 @@ export default class Month extends React.Component {
       onWeekOutOfMonth(firstDayOfNextWeek);
     }
   }
-
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({
       currentWeekIndex: this._getStartingWeek(nextProps.currentDate, nextProps.weeks),
     });
