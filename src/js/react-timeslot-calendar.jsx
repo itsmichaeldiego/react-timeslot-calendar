@@ -23,7 +23,6 @@ ReactTimeslotCalendar.defaultProps = {
   timeslots: DEFAULT_TIMESLOTS,
 };
 
-
 /**
  * @type {String} initialDate:  The initial date in which to place the calendar. Must be MomentJS parseable.
  * @type {Array} timeslots:  An array of timeslots to be displayed in each day.
@@ -37,7 +36,6 @@ ReactTimeslotCalendar.defaultProps = {
  * @type {Object} onSelectTimeslot: Function which takes as parameters 1) The array of selected timeslots and 2) The latest selected timeslot.
  */
 ReactTimeslotCalendar.propTypes = {
-  initialDate: PropTypes.string.isRequired,
   timeslots: PropTypes.array.isRequired,
   timeslotProps: PropTypes.object,
   selectedTimeslots: PropTypes.array,
