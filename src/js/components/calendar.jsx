@@ -246,6 +246,7 @@ export default class Calendar extends React.Component {
     this.renderDays = Object.assign({}, defaultRenderDays, renderDays);
   }
 
+  // eslint-disable-next-line
   componentWillReceiveProps(nextProps) {
     this._updateInputProps(nextProps.startDateInputProps, nextProps.endDateInputProps);
     this._updateTimeslotProps(nextProps.timeslotProps);

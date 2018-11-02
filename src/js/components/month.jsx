@@ -156,6 +156,7 @@ export default class Month extends React.Component {
     }
   }
 
+  // eslint-disable-next-line
   componentWillReceiveProps(nextProps) {
     this.setState({
       currentWeekIndex: this._getStartingWeek(nextProps.currentDate, nextProps.weeks),
