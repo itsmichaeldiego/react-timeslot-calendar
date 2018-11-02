@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import CalendarJS from 'calendarjs';
 import Month from './month.jsx';
+import CalendarJS from '../util/calendarjs';
 
 export default class Calendar extends React.Component {
   constructor(props) {
@@ -62,7 +62,7 @@ export default class Calendar extends React.Component {
       initialDate,
     } = this.props;
 
-    const cal = new CalendarJS(currentDate.year(), currentDate.month() + 1);
+    const cal = new CalendarJS(currentDate.year(), currentDate.month() + 1, currentDate.day());
     const weeks = cal.generate();
 
     return (
