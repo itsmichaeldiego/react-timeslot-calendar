@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import moment from 'moment';
 
 import '../../styles/demo/main.scss';
 
@@ -12,9 +11,6 @@ import customTimeslotSnippet from './snippets/custom-timeslot.md';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-
-    this.initialDate = moment([2017, 3, 24]);
-
   }
   render() {
     return (
@@ -31,7 +27,6 @@ export default class App extends React.Component {
         <h3> Using Custom Timeslots and Callback </h3>
         <MarkdownSnippet snippet = { customTimeslotSnippet }/>
         <ReactTimeslotCalendar
-          initialDate = { this.initialDate.format() }
           timeslots = { {
             monday: [['1', '2']], // 1:00 AM - 2:00 AM
             tuesday: [['1', '2']], // 1:00 AM - 2:00 AM
