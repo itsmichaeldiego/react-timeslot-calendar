@@ -27,11 +27,15 @@ export default class App extends React.Component {
         <h3> Using Custom Timeslots and Callback </h3>
         <MarkdownSnippet snippet = { customTimeslotSnippet }/>
         <ReactTimeslotCalendar
-          timeslots = { [
-            ['9', '10'],
-            ['10', '11'],
-            ['18'],
-          ] }
+          timeslots = { {
+            monday: [['1', '2']], // 1:00 AM - 2:00 AM
+            tuesday: [['1', '2']], // 1:00 AM - 2:00 AM
+            wednesday: ['5'], // 5:00 AM
+            thursday: [['4', '6'],['7', '8']], // 4:00 AM - 6:00 AM - 7:00AM - 8:00AM
+            friday: [['1', '2']], // 1:00 AM - 2:00 AM
+            saturday: [['1', '2']], // 1:00 AM - 2:00 AM
+            sunday: [['1', '2']]} // 1:00 AM - 2:00 AM
+          }
           maxTimeslots = { 3 }
           onSelectTimeslot = { (timeslots, lastSelected) => {
             console.log('All Timeslots:');

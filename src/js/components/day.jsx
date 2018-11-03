@@ -33,13 +33,15 @@ export default class Day extends React.Component {
   _renderTitle() {
     const {
       renderTitle,
+      renderDay,
       momentTime,
     } = this.props;
 
     return (
-      <div className = "tsc-day__title">
+      <span className = "tsc-day__title">
         <span>{renderTitle(momentTime)}</span>
-      </div>
+        <span>{renderDay(momentTime)}</span>
+      </span>
     );
   }
 
@@ -120,7 +122,10 @@ Day.defaultProps = {
   timeslotFormat: DEFAULT_TIMESLOT_FORMAT,
   timeslotShowFormat: DEFAULT_TIMESLOT_SHOW_FORMAT,
   renderTitle: (momentTime) => {
-    return momentTime.format('dddd (D)');
+    return momentTime.format('dddd');
+  },
+  renderDay: (momentTime) => {
+    return momentTime.format('(D)');
   },
 };
 
@@ -144,6 +149,7 @@ Day.propTypes = {
   timeslotFormat: PropTypes.string.isRequired,
   timeslotShowFormat: PropTypes.string.isRequired,
   onTimeslotClick: PropTypes.func.isRequired,
+  renderDay: PropTypes.func.isRequired,
   renderTitle: PropTypes.func.isRequired,
   momentTime: PropTypes.object.isRequired,
   initialDate: PropTypes.object.isRequired,
