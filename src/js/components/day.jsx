@@ -39,9 +39,8 @@ export default class Day extends React.Component {
 
     return (
       <span className = "tsc-day__title">
-        {renderTitle(momentTime)}
-        <br/>
-        {renderDay(momentTime)}
+        <span>{renderTitle(momentTime)}</span>
+        <span>{renderDay(momentTime)}</span>
       </span>
     );
   }

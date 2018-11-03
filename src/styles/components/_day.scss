@@ -7,8 +7,23 @@
 .tsc-day__title {
   color: $day-default-color;
   font-family: $day-fonts;
-  text-align: center;
   font-weight: 700;
   padding: $timeslot-margin;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  > span:first-child {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .tsc-day__title {
+    flex-direction: row;
+    > span:first-child {
+      margin-right: 1ch;
+    }
+  }
 }
